@@ -26,21 +26,25 @@
 	    // products array
 	    $products_arr=array();
 	    
+	    // aux variable
+	    $position=1;
   
 	    // retrieve our table contents
 	    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
-    	    // extract row
-    	    // this will make $row['name'] to
-    	    // just $name only
-    	    extract($row);
+    	    	// extract row
+    	    	// this will make $row['name'] to
+    	    	// just $name only
+    	    	extract($row);
   
-    	    $product_item=array(
-        	"codigo" => $codigo,
-        	"nome" => $nome,
-        	"preco" => $preco,
-    	    );
+    	    	$product_item=array(
+        		"codigo" => $codigo,
+        		"nome" => $nome,
+        		"preco" => $preco,
+			"posicao" => $position,
+    	    	);
   
-    	    array_push($products_arr, $product_item);
+    	    	array_push($products_arr, $product_item);
+		$position++; 
 	    }
   
 	    // set response code - 200 OK
