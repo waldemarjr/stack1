@@ -1,4 +1,4 @@
-const url = "http://localhost:8000/product/read.php";
+const url = "http://10.20.30.120:8000/product/read.php";
 
 axios.get(url).then((response) => {
 
