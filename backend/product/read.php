@@ -25,7 +25,7 @@
   
 	    // products array
 	    $products_arr=array();
-	    $products_arr["produtos"]=array();
+	    
   
 	    // retrieve our table contents
 	    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -40,7 +40,7 @@
         	"preco" => $preco,
     	    );
   
-    	    array_push($products_arr["produtos"], $product_item);
+    	    array_push($products_arr, $product_item);
 	    }
   
 	    // set response code - 200 OK
@@ -56,7 +56,7 @@
   
 	    // tell the user no products found
 	    echo json_encode(
-    	  array("message" => "No products found.")
+    	  	array("message" => "No products found.")
 	    );
       
     }
